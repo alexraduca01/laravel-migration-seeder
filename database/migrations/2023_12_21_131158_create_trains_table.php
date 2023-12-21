@@ -17,11 +17,11 @@ return new class extends Migration
             $table->id();
 
             $table->string('company', 100);
-            $table->string('departure_station', 255);
-            $table->string('arrival_station', 255);
+            $table->string('departure_station');
+            $table->string('arrival_station');
             $table->dateTime('departure_time');
             $table->dateTime('arrival_time');
-            $table->integer('train_code', 10)->unsigned()->unique();
+            $table->string('train_code', 10)->unique();
             $table->integer('carriages')->unsigned();
             $table->tinyInteger('on_time')->unsigned()->default(0);
             $table->tinyInteger('cancelled')->unsigned();
